@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NeuroPro AI - Cognitive Immortality. Preserving human intellect through quantum computing, advanced AI, and holographic interfaces.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="NeuroPro AI, Cognitive Immortality, Digital Brain, Knowledge Preservation, Quantum Computing, Neural Interfaces">
+    <meta name="author" content="NeuroPro AI">
+    <title>NeuroPro AI - Cognitive Immortality / Kognitive Unsterblichkeit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Typography */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.7em;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        :root {
+            /* Farbdefinitionen */
+            --accent: #00ffa2;
+            --accent-secondary: #00caf2;
+            --bg-gradient: linear-gradient(to bottom right, #080C1E, #0C1629, #0D1A2F);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .left-block {
+            display: flex;
+            align-items: center;
+        }
+
+        .center-block {
+            display: flex;
+            justify-content: center;
+        }
+
+        .right-block {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin: 0 12px;
+            font-size: 0.95em;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 5px var(--accent);
+        }
+
+        .lang-toggle {
+            font-size: 0.95em;
+            font-weight: 500;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .lang-toggle:hover {
+            background: #00e892;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Nav */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .mobile-nav-overlay.active {
+            display: flex;
+        }
+
+        .mobile-nav-overlay nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mobile-nav-overlay nav a {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        .mobile-nav-overlay .lang-toggle {
+            margin-top: 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: var(--bg-gradient);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            max-width: 900px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: #eaeaea;
+        }
+
+        .cta-button {
+            background: var(--accent);
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            color: #000;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #00e892;
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        section {
+            padding: 120px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        section h3 {
+            font-size: 2.4em;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        section p {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            color: #ddd;
+        }
+
+        .glow-divider {
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+            margin: 40px auto;
+            opacity: 0.7;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* About */
+        #about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            text-align: left;
+            align-items: center;
+        }
+
+        #about img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,255,162,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #about img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Technology */
+        #technology {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 100px 40px;
+            margin-top: 140px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .tech-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-item h4 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* How It Works */
+        #how-it-works {
+            text-align: left;
+            margin-top: 140px;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step {
+            flex: 1 1 calc(33.333% - 40px);
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px var(--accent-secondary);
+        }
+
+        .step h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Holograms */
+        #holograms {
+            margin-top: 140px;
+            background: linear-gradient(135deg, #0B1C2F, #1B2F44);
+            border-radius: 20px;
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .hologram-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 60px;
+            justify-content: center;
+        }
+
+        .hologram-item {
+            width: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hologram-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px var(--accent-secondary);
+        }
+
+        /* Testimonials */
+        #testimonials {
+            margin-top: 140px;
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .testimonial::before {
+            content: "“";
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4em;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            color: var(--accent);
+            opacity: 0.1;
+        }
+
+        .testimonial h4 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .testimonial p {
+            font-size: 1em;
+            line-height: 1.7em;
+        }
+
+        .testimonial .author {
+            font-size: 0.9em;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        /* FAQ */
+        #faq {
+            margin-top: 140px;
+            text-align: left;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px var(--accent-secondary);
+        }
+
+        .faq-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        #contact {
+            margin-top: 140px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: left;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+        }
+
+        #contact label {
+            font-weight: 500;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        #contact input, #contact textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Inter', sans-serif;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        #contact button {
+            background-color: var(--accent);
+            color: #000;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #contact button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Newsletter */
+        #newsletter {
+            margin-top: 140px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .newsletter-form button {
+            background-color: var(--accent);
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.8);
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 140px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .social-links {
+            margin: 20px 0 40px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.2em;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            text-shadow: 0 0 5px var(--accent);
+        }
+
+        /* Language Specific Classes */
+        .en {
+            display: block;
+        }
+
+        .de {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            #about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            #about p {
+                text-align: left;
+            }
+
+            #about img {
+                margin-top: 40px;
+            }
+
+            .step {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 20px;
+            }
+
+            .header-container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+
+            .center-block {
+                display: none;
+            }
+
+            .right-block {
+                justify-content: flex-end;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            /* Lang toggle sichtbar lassen */
+            .lang-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            section h3 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="left-block">
+            <h1>NeuroPro AI</h1>
+        </div>
+        <div class="center-block">
+            <nav>
+                <a href="#about" class="en">About</a>
+                <a href="#technology" class="en">Technology</a>
+                <a href="#how-it-works" class="en">Process</a>
+                <a href="#holograms" class="en">Holograms</a>
+                <a href="#testimonials" class="en">Testimonials</a>
+                <a href="#faq" class="en">FAQ</a>
+                <a href="#contact" class="en">Contact</a>
+
+                <a href="#about" class="de">Über Uns</a>
+                <a href="#technology" class="de">Technologie</a>
+                <a href="#how-it-works" class="de">Ablauf</a>
+                <a href="#holograms" class="de">Hologramme</a>
+                <a href="#testimonials" class="de">Meinungen</a>
+                <a href="#faq" class="de">FAQ</a>
+                <a href="#contact" class="de">Kontakt</a>
+            </nav>
+        </div>
+        <div class="right-block">
+            <button class="mobile-nav-toggle" aria-label="Menu" onclick="toggleMobileNav()">&#9776;</button>
+            <button class="lang-toggle" onclick="toggleLanguage()">DE/EN</button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <nav>
+        <a href="#about" class="en" onclick="closeMobileNav()">About</a>
+        <a href="#technology" class="en" onclick="closeMobileNav()">Technology</a>
+        <a href="#how-it-works" class="en" onclick="closeMobileNav()">Process</a>
+        <a href="#holograms" class="en" onclick="closeMobileNav()">Holograms</a>
+        <a href="#testimonials" class="en" onclick="closeMobileNav()">Testimonials</a>
+        <a href="#faq" class="en" onclick="closeMobileNav()">FAQ</a>
+        <a href="#contact" class="en" onclick="closeMobileNav()">Contact</a>
+
+        <a href="#about" class="de" onclick="closeMobileNav()">Über Uns</a>
+        <a href="#technology" class="de" onclick="closeMobileNav()">Technologie</a>
+        <a href="#how-it-works" class="de" onclick="closeMobileNav()">Ablauf</a>
+        <a href="#holograms" class="de" onclick="closeMobileNav()">Hologramme</a>
+        <a href="#testimonials" class="de" onclick="closeMobileNav()">Meinungen</a>
+        <a href="#faq" class="de" onclick="closeMobileNav()">FAQ</a>
+        <a href="#contact" class="de" onclick="closeMobileNav()">Kontakt</a>
+    </nav>
+    <button class="lang-toggle" onclick="toggleLanguage()">DE/EN</button>
+</div>
+
+<div class="hero">
+    <h2 class="en">Cognitive Immortality For the Next Century</h2>
+    <h2 class="de">Kognitive Unsterblichkeit für die Zukunft</h2>
+    <p class="en">NeuroPro AI transcends biological limits. Through quantum-grade neural mapping, holographic cognition interfaces, and ethically guided AI evolution, we preserve intellect for endless generations. Enter a future where human thought endures as a living digital continuum.</p>
+    <p class="de">NeuroPro AI überwindet biologische Grenzen. Mit präziser neuronaler Kartierung, holographischen Kognitionsschnittstellen und ethisch geführter KI-Entwicklung bewahren wir menschliches Denken über Jahrhunderte hinweg. Treten Sie ein in eine Zukunft, in der Gedanken als lebendiges digitales Kontinuum fortbestehen.</p>
+    <button class="cta-button en" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">Learn More</button>
+    <button class="cta-button de" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">Mehr erfahren</button>
+</div>
+
+<section id="about">
+    <div>
+        <h3 class="en">Preserving Humanity’s Mindscape</h3>
+        <h3 class="de">Das Denken für kommende Generationen bewahren</h3>
+        <p class="en">NeuroPro AI encodes the very essence of human cognition—memories, insights, creativity—into secure digital architectures. Through advanced neuroimaging, AI pattern recognition, and quantum computing, we safeguard entire intellectual legacies for today, tomorrow, and beyond.</p>
+        <p class="de">NeuroPro AI speichert das Wesen menschlicher Kognition—Erinnerungen, Erkenntnisse, Kreativität—in sicheren digitalen Strukturen. Mithilfe fortschrittlicher Neurobildgebung, KI-Mustererkennung und Quantencomputing sichern wir vollständige intellektuelle Vermächtnisse für heute, morgen und die ferne Zukunft.</p>
+        <p class="en">This synergy ensures knowledge is never lost. Instead, it evolves, informs, and inspires future thinkers, innovators, and leaders.</p>
+        <p class="de">Diese Synergie stellt sicher, dass Wissen nie verloren geht. Stattdessen entwickelt es sich weiter, informiert und inspiriert zukünftige Denker, Erfinder und Entscheider.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Neural Interface Visualization">
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="technology">
+    <h3 class="en">Hyper-Advanced Digital Brain Ecosystems</h3>
+    <h3 class="de">Modernste digitale Gehirnwelten</h3>
+    <p class="en">Our suite integrates quantum informatics, adaptive AI, and secure frameworks, translating complex neural realities into accessible digital paradigms.</p>
+    <p class="de">Unsere Lösungen vereinen Quanteninformatik, anpassungsfähige KI und sichere Datenrahmen, um komplexe neuronale Realitäten in zugängliche digitale Paradigmen zu überführen.</p>
+    <div class="tech-grid">
+        <div class="tech-item">
+            <h4 class="en">Synaptic Mapping</h4>
+            <h4 class="de">Präzise Gehirnkartierung</h4>
+            <p class="en">Reconstruct detailed neural landscapes, capturing subtle links between memory and thought.</p>
+            <p class="de">Rekonstruieren Sie neuronale Landschaften, um subtile Verknüpfungen zwischen Erinnerung und Denken sichtbar zu machen.</p>
+        </div>
+        <div class="tech-item">
+            <h4 class="en">Quantum-Class Computation</h4>
+            <h4 class="de">Quantenbasierte Auswertung</h4>
+            <p class="en">Analyze vast cognitive datasets at unparalleled speed with quantum processors.</p>
+            <p class="de">Analysieren Sie gewaltige Datensätze mit Quantenprozessoren in beispielloser Geschwindigkeit.</p>
+        </div>
+        <div class="tech-item">
+            <h4 class="en">Adaptive Neural Networks</h4>
+            <h4 class="de">Anpassungsfähige KI-Systeme</h4>
+            <p class="en">Continuously evolving AI mirrors the growth and fluidity of living minds.</p>
+            <p class="de">Stetig lernende KI spiegelt die Dynamik lebendiger Gehirne wider.</p>
+        </div>
+        <div class="tech-item">
+            <h4 class="en">Secure Data Frameworks</h4>
+            <h4 class="de">Sichere Datenstrukturen</h4>
+            <p class="en">Quantum-safe encryption and decentralized storage preserve integrity and privacy for centuries.</p>
+            <p class="de">Quantenresistente Verschlüsselung und dezentrale Speicherung sichern Integrität und Privatsphäre über Jahrhunderte hinweg.</p>
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="how-it-works">
+    <h3 class="en">The Preservation Protocol</h3>
+    <h3 class="de">So funktioniert es</h3>
+    <p class="en">From capture to exploration, merging scientific rigor and ethical oversight.</p>
+    <p class="de">Von der Erfassung bis zur Erkundung: ein Zusammenspiel aus Wissenschaftlichkeit und Ethik.</p>
+    <div class="steps">
+        <div class="step">
+            <h4 class="en">1. Non-Invasive Cognitive Capture</h4>
+            <h4 class="de">1. Schonende Gehirn-Analyse</h4>
+            <p class="en">Multi-spectral imaging decodes synaptic patterns without physical intervention.</p>
+            <p class="de">Multispektrale Bildgebung entschlüsselt synaptische Muster ohne körperliche Eingriffe.</p>
+        </div>
+        <div class="step">
+            <h4 class="en">2. Cognitive Encoding</h4>
+            <h4 class="de">2. Digitale Aufbereitung</h4>
+            <p class="en">Adaptive AI translates thought structures into navigable digital frameworks.</p>
+            <p class="de">Anpassungsfähige KI überführt Denkmuster in navigierbare digitale Strukturen.</p>
+        </div>
+        <div class="step">
+            <h4 class="en">3. Immersive Interaction</h4>
+            <h4 class="de">3. Erlebbare Nutzung</h4>
+            <p class="en">Access intellect through AR/VR, holograms, or neural links for seamless exploration.</p>
+            <p class="de">Greifen Sie über AR/VR, Hologramme oder neuronale Verbindungen auf das Wissen zu, um es nahtlos zu erkunden.</p>
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="holograms">
+    <h3 class="en">Holographic Realms of Thought</h3>
+    <h3 class="de">Gedankenwelten in Hologrammen</h3>
+    <p class="en">Navigate luminous 3D data fields, making learning intuitive and tactile.</p>
+    <p class="de">Erkunden Sie leuchtende 3D-Datenfelder, um Lernen anschaulich und greifbar zu gestalten.</p>
+    <div class="hologram-content">
+        <div class="hologram-item">
+            <h4 class="en">Dynamic Brain Atlases</h4>
+            <h4 class="de">Lebendige Wissenskarten</h4>
+            <p class="en">View intellects as living maps accessible through gestures and voice.</p>
+            <p class="de">Betrachten Sie Intellekte als lebendige Karten, steuerbar mit Gesten und Sprache.</p>
+        </div>
+        <div class="hologram-item">
+            <h4 class="en">Real-Time Exploration</h4>
+            <h4 class="de">Erforschung in Echtzeit</h4>
+            <p class="en">Collaboratively dissect thought chains, compressing centuries of insight into minutes.</p>
+            <p class="de">Zerlegen Sie Gedankenketten gemeinsam und verdichten Sie Jahrhunderte an Erkenntnissen in Minuten.</p>
+        </div>
+        <div class="hologram-item">
+            <h4 class="en">Contextualized Wisdom</h4>
+            <h4 class="de">Wissen im Kontext</h4>
+            <p class="en">Experience cultural, historical perspectives with dimensional clarity.</p>
+            <p class="de">Erleben Sie kulturelle und historische Perspektiven in räumlicher Klarheit.</p>
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="testimonials">
+    <h3 class="en">Endorsements & Perspectives</h3>
+    <h3 class="de">Stimmen & Eindrücke</h3>
+    <p class="en">Scholars recognize NeuroPro AI's strides in cognitive continuity.</p>
+    <p class="de">Experten würdigen NeuroPro AIs Fortschritte in kognitiver Kontinuität.</p>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <h4 class="en">Dr. Reiko Matsumoto, Neuroscientist</h4>
+            <h4 class="de">Dr. Reiko Matsumoto, Neurowissenschaftlerin</h4>
+            <p class="en">“NeuroPro AI grants humanity a legacy of collective intelligence.”</p>
+            <p class="de">„NeuroPro AI schenkt der Menschheit ein Erbe kollektiver Intelligenz.“</p>
+            <div class="author en">— Global Brain Institute</div>
+            <div class="author de">— Globales Gehirninstitut</div>
+        </div>
+        <div class="testimonial">
+            <h4 class="en">Prof. Amir Al-Sharif, Historian</h4>
+            <h4 class="de">Prof. Amir Al-Sharif, Historiker</h4>
+            <p class="en">“By preserving great minds, future generations can learn from their wisdom.”</p>
+            <p class="de">„Durch das Bewahren großer Denker können künftige Generationen von deren Weisheit profitieren.“</p>
+            <div class="author en">— New Cultural Archives</div>
+            <div class="author de">— Neue Kulturarchive</div>
+        </div>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="faq">
+    <h3 class="en">Frequently Asked Questions</h3>
+    <h3 class="de">Häufige Fragen</h3>
+    <div class="faq-item">
+        <h4 class="en">Is this ethically managed?</h4>
+        <h4 class="de">Ist das ethisch vertretbar?</h4>
+        <p class="en">Strict ethical codes, consent protocols, and independent oversight guide us.</p>
+        <p class="de">Strenge ethische Richtlinien, Einwilligungsprotokolle und unabhängige Kontrolle leiten uns.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="en">Who can access preserved intellect?</h4>
+        <h4 class="de">Wer darf auf dieses Wissen zugreifen?</h4>
+        <p class="en">Access respects privacy, cultural values, and contributor wishes.</p>
+        <p class="de">Der Zugang achtet Privatsphäre, kulturelle Werte und die Wünsche der Beitragenden.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="en">How secure is the data?</h4>
+        <h4 class="de">Wie sicher sind die Daten?</h4>
+        <p class="en">Quantum-safe encryption and decentralized frameworks ensure long-term integrity.</p>
+        <p class="de">Quantenresistente Verschlüsselung und dezentrale Systeme gewährleisten langfristige Integrität.</p>
+    </div>
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="contact">
+    <h3 class="en">Contact NeuroPro AI</h3>
+    <h3 class="de">Kontaktieren Sie NeuroPro AI</h3>
+    <p class="en">We welcome inquiries from educators, institutions, and innovators.</p>
+    <p class="de">Wir freuen uns auf Anfragen von Bildungseinrichtungen, Institutionen und Innovatoren.</p>
+    <form>
+        <label for="name" class="en">Name</label>
+        <label for="name" class="de">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name / Ihr voller Name" required>
+
+        <label for="email" class="en">Email</label>
+        <label for="email" class="de">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="Your Email / Ihre E-Mail" required>
+
+        <label for="message" class="en">Message</label>
+        <label for="message" class="de">Nachricht</label>
+        <textarea id="message" name="message" rows="6" placeholder="How can we assist? / Wie können wir helfen?" required></textarea>
+
+        <button type="submit" class="en">Send Inquiry</button>
+        <button type="submit" class="de">Anfrage senden</button>
+    </form>
+</section>
+
+<div class="glow-divider"></div>
+
+<section id="newsletter">
+    <h3 class="en">Stay Informed</h3>
+    <h3 class="de">Bleiben Sie auf dem Laufenden</h3>
+    <p class="en">Join our newsletter for updates on breakthroughs, projects, and emerging paradigms.</p>
+    <p class="de">Abonnieren Sie unseren Newsletter für aktuelle Infos zu Durchbrüchen, Projekten und neuen Paradigmen.</p>
+    <div class="newsletter-form">
+        <input type="email" placeholder="Your Email / Ihre E-Mail" required>
+        <button type="submit" class="en">Subscribe</button>
+        <button type="submit" class="de">Abonnieren</button>
+    </div>
+</section>
+
+<footer>
+    <div class="social-links">
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+    </div>
+    <p class="en">&copy; 2024 NeuroPro AI. All rights reserved.</p>
+    <p class="de">&copy; 2024 NeuroPro AI. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+    function toggleLanguage() {
+        const enElements = document.querySelectorAll('.en');
+        const deElements = document.querySelectorAll('.de');
+
+        let englishActive = false;
+        enElements.forEach(el => {
+            if (window.getComputedStyle(el).display !== 'none') {
+                englishActive = true;
+            }
+        });
+
+        if (englishActive) {
+            enElements.forEach(el => el.style.display = 'none');
+            deElements.forEach(el => el.style.display = 'block');
+        } else {
+            enElements.forEach(el => el.style.display = 'block');
+            deElements.forEach(el => el.style.display = 'none');
+        }
+    }
+
+    function toggleMobileNav() {
+        const overlay = document.getElementById('mobileNavOverlay');
+        overlay.classList.toggle('active');
+    }
+
+    function closeMobileNav() {
+        const overlay = document.getElementById('mobileNavOverlay');
+        overlay.classList.remove('active');
+    }
+</script>
+
+</body>
+</html>
